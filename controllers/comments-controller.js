@@ -59,4 +59,14 @@ commentsController.update = (req, res) => {
   });
 }
 
+commentsController.destroy = (req, res) => {
+  Comment.destroy(req.params.id)
+    .then(() => {
+      res.redirect('/comments')
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
 module.exports = commentsController;

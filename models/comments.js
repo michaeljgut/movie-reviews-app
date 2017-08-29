@@ -35,4 +35,14 @@ Comment.update = (comment, id) => {
   `, [comment.movie_title, comment.comment, id]);
 }
 
+Comment.destroy = id => {
+  return db.none(
+    `
+      DELETE FROM comments
+      WHERE id = $1
+    `,
+    [id]
+  );
+};
+
 module.exports = Comment;

@@ -10,5 +10,6 @@ commentsRouter.get('/:id', commentsController.show);
 commentsRouter.post('/', commentsController.create);
 commentsRouter.get('/:id/edit', commentsController.edit);
 commentsRouter.put('/:id', commentsController.update);
+commentsRouter.delete('/:id', commentsController.destroy);
 
 module.exports = commentsRouter;
