@@ -20,6 +20,4 @@ function setDatabase() {
 
 const db = setDatabase();
 
-console.log(db);
-
 module.exports = db;

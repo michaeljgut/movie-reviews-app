@@ -1,6 +1,10 @@
+<% include ../partials/boilerplate %>
+
 <h1><%= comment.movie_title %></h1>
 
 <p><%= comment.comment %></p>
 
+<a href="/comments/<%=comment.id%>/edit">Edit Comment</a>
 <a href="/comments">Back to comments index</a> |
 
+<% include ../partials/end %>

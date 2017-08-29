@@ -35,4 +35,28 @@ commentsController.show = (req, res) => {
     });
 };
 
+commentsController.edit = (req, res) => {
+  Comment.findById(req.params.id)
+    .then(comment => {
+      res.render('comments/edit', {
+        comment: comment,
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+}
+
+commentsController.update = (req, res) => {
+  Comment.update({
+    movie_title: req.body.movie_title,
+    comment: req.body.comment
+  }, req.params.id).then(comment => {
+    res.redirect(`/comments/${comment.id}`);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+}
+
 module.exports = commentsController;

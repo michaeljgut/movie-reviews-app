@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path')
 const app = express();
+const methodOverride = require('method-override');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -12,6 +13,10 @@ app.use(logger('dev'));
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+
+// set up static and views
+app.use(express.static('public'));
 
 // Set up Routes
 

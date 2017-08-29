@@ -25,4 +25,14 @@ Comment.findById = (id) => {
   `, [id]);
 }
 
+Comment.update = (comment, id) => {
+  return db.one(`
+    UPDATE comments SET
+    movie_title = $1,
+    comment = $2
+    WHERE id = $3
+    RETURNING *
+  `, [comment.movie_title, comment.comment, id]);
+}
+
 module.exports = Comment;
