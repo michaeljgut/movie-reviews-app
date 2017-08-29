@@ -8,6 +8,6 @@ CREATE TABLE IF NOT EXISTS comments
 (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  movie_title VARCHAR(255),
+  movie_title VARCHAR(255) UNIQUE NOT NULL,
   comment TEXT
 );

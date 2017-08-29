@@ -1,0 +1,14 @@
+<h1>All the comments</h1>
+
+<a href="/comments/new">Add a comment!</a>
+
+<% comments.forEach(comment => { %>
+  <div class="comment">
+    <h4>
+      <a href="<%= `/comments/${comment.id}` %>">
+        <%= comment.movie_title %>
+      </a>
+    </h4>
+    <p><%= comment.comment %></p>
+  </div>
+<% }) %>
