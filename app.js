@@ -22,7 +22,7 @@ const passport = require('passport');
 
 app.use(cookieParser());
 app.use(session({
-  secret: process.env.SECRET_KEY,
+  secret: process.env.SECRET_KEY || 'abc',
   resave: false,
   saveUninitialized: true,
 }));
