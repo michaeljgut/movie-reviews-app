@@ -11,7 +11,7 @@ Comment.create = (comment, userid) => {
     `
       INSERT INTO comments
       (movie_title, comment, user_id)
-      VALUES ($1, $2)
+      VALUES ($1, $2, $3)
       RETURNING *
     `,
     [comment.movie_title, comment.comment, userid]
