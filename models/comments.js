@@ -6,15 +6,15 @@ Comment.findAll = () => {
   return db.query('SELECT * FROM comments');
 }
 
-Comment.create = comment => {
+Comment.create = (comment, userid) => {
   return db.one(
     `
       INSERT INTO comments
-      (movie_title, comment)
+      (movie_title, comment, user_id)
       VALUES ($1, $2)
       RETURNING *
     `,
-    [comment.movie_title, comment.comment]
+    [comment.movie_title, comment.comment, userid]
   );
 };
 

@@ -16,7 +16,7 @@ commentsController.create = (req, res) => {
   Comment.create({
       movie_title: req.body.movie_title,
       comment: req.body.comment
-    })
+    }, req.user.id)
     .then(comment => {
       res.redirect(`/comments/${comment.id}`)
     })
