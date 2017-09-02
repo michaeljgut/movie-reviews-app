@@ -1,0 +1,10 @@
+<% include ../partials/boilerplate %>
+
+<h1>NY Times Movie Reviews</h1>
+
+<form id='request' action="/movie-reviews/show" method="POST">
+  <input id='movie' type='text' name='movieTitle' placeholder='Movie Title' />
+  <input id='submit' type='submit' value='Get the movie review!' />
+</form>
+
+<% include ../partials/end %>

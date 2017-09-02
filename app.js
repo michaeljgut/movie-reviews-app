@@ -4,8 +4,8 @@ const app = express();
 require('dotenv').config();
 const methodOverride = require('method-override');
 
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Middle ware
 const logger = require('morgan');
@@ -42,8 +42,11 @@ app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
 
+const movieReviewsRouter = require('./routes/movie-reviews-routes');
+app.use('/movie-reviews', movieReviewsRouter);
+
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.render('movie-reviews/index');
 });
 
 const PORT = process.env.PORT || 3000;
