@@ -25,4 +25,11 @@ User.findUserComments = id => {
   `, [id]);
 };
 
+User.findUserMovieComments = (id, movieTitle) => {
+  return db.manyOrNone(`
+    SELECT * FROM comments
+    WHERE user_id = $1 AND movie_title = $2
+  `, [id, movieTitle]);
+};
+
 module.exports = User;

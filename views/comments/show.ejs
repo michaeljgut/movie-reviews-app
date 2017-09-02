@@ -5,7 +5,7 @@
 <p><%= comment.comment %></p>
 
 <a href="/comments/<%=comment.id%>/edit">Edit Comment</a>
-<a href="/comments">Back to comments index</a> |
+<a href="/">Get another movie review</a> |
 
 <form action="<%= `/comments/${comment.id}?_method=DELETE` %>" method="POST">
   <input type="submit" value="Delete" />

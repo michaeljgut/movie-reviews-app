@@ -46,7 +46,7 @@ const movieReviewsRouter = require('./routes/movie-reviews-routes');
 app.use('/movie-reviews', movieReviewsRouter);
 
 app.get('/', (req, res) => {
-  res.render('movie-reviews/index');
+  res.render('index', {movieReviewMessage: 'Please enter movie title'});
 });
 
 const PORT = process.env.PORT || 3000;
