@@ -7,7 +7,7 @@ Comment.findAll = () => {
 }
 
 Comment.findAllByMovieTitle = (movieTitle) => {
-  return db.query(`SELECT comment, to_char(date_entered, 'DD Mon YYYY') AS date_entered, username FROM comments
+  return db.query(`SELECT comment, to_char(date_entered, 'YYYY-MM-DD') AS date_entered, username FROM comments
                    JOIN users
                    ON comments.user_id = users.id
                    WHERE movie_title = $1

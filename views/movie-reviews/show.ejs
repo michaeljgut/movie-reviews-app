@@ -5,6 +5,9 @@
 <p>Critics Pick: <%= movieReview.results[0].critics_pick %></p>
 <p>Summary: <%= movieReview.results[0].summary_short %></p>
 <p>Opening Date: <%= movieReview.results[0].opening_date %></p>
+<p>
+  <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
+</p>
 
 <h4>Comments</h4>
 
@@ -13,7 +16,6 @@
 <% }) %>
 
 <p>
-  <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
   <a href="/">Look up another movie</a>
   <a href="../comments/new">Add a comment</a>
 </p>
