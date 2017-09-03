@@ -2,9 +2,7 @@ const Comment = require('../models/comments.js');
 const movieReviewsController = {};
 
 movieReviewsController.index = (req, res) => {
-  res.json({
-    message: 'Here is our Movie Reviews index route',
-  });
+  res.render('index',{movieReviewMessage: 'Please enter movie title'})
 }
 
 movieReviewsController.sendApiMovieReviews = (req, res) => {
