@@ -5,6 +5,8 @@ const movieReviewsController = require('../controllers/movie-review-controller')
 const movieReviewsHelper = require('../services/movie-reviews/movie-reviews-helper');
 
 movieReviewsRouter.get('/', movieReviewsController.index);
+// movieReviewsRouter.get('/show', movieReviewsHelper.getMovieReviewsFromAPI,
+//   movieReviewsController.sendApiMovieReviews);
 movieReviewsRouter.post('/show', movieReviewsHelper.getMovieReviewsFromAPI,
   movieReviewsController.sendApiMovieReviews);
 

@@ -12,7 +12,12 @@ movieReviewsController.sendApiMovieReviews = (req, res) => {
   if (res.locals.movieReviewData.num_results < 1)
     res.render('index',{movieReviewMessage: 'Movie not found'})
   else {
-    Comment.findAllByMovieTitle(req.body.movieTitle)
+    let movie = '';
+    if (req.body.movieTitle)
+      movie = req.body.movieTitle;
+    else
+      movie = req.params.movieTitle;
+    Comment.findAllByMovieTitle(movie)
       .then(comments => {
         console.log(comments);
         res.render('movie-reviews/show', {movieReview: res.locals.movieReviewData,

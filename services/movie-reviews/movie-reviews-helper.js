@@ -4,10 +4,14 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 
 function getMovieReviewsFromAPI(req, res, next) {
-  let movie = req.body.movieTitle;
+  let movie = '';
+  if (req.body.movieTitle)
+    movie = req.body.movieTitle;
+  else
+    movie = req.params.movieTitle;
   console.log('In getMovieReviewsFromAPI');
-  console.log(req.body.movieTitle);
-  let movieQuery = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='${req.body.movieTitle}'&api-key=${API_KEY}`;
+  console.log(req.params.movieTitle);
+  let movieQuery = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='${movie}'&api-key=${API_KEY}`;
   console.log(movieQuery);
   fetch(movieQuery)
 // fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='Star Wars'&api-key=23ef585f24434a31bc9550dbab01d0bb`)
