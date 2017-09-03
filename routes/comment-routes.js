@@ -5,7 +5,7 @@ const authHelpers = require('../services/auth/auth-helpers');
 
 commentsRouter.get('/', commentsController.index);
 commentsRouter.get('/new', authHelpers.loginRequired, (req, res) => {
-  console.log(req);
+  console.log('In comments router, req = ',req);
   res.render('comments/new');
 //  res.render('comments/new', {movieTitle: res.locals.movieReviewData.results[0].display_title});
 });
