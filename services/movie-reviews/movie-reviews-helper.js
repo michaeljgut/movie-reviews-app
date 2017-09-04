@@ -27,6 +27,7 @@ function getMovieReviewsFromAPI(req, res, next) {
         res.locals.movieReviewData.results[0].critics_pick = 'No';
       next();
     }).catch(err => {
+      console.log('in getMovieReviewsFromAPI');
       console.log(err);
       next();
     })
