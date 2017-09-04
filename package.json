@@ -33,6 +33,8 @@
     "pg-promise": "^6.5.1"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
     "nodemon": "^1.11.0"
   }
 }
