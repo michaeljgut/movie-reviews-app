@@ -22,6 +22,7 @@ movieReviewsController.sendApiMovieReviews = (req, res) => {
                                           comments: comments});
       }).catch(err => {
         console.log(err);
+        console.log('in sendApiMovieReviews');
         res.status(500).json({err: err});
       });
   }
