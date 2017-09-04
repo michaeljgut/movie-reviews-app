@@ -11,8 +11,8 @@ function getMovieReviewsFromAPI(req, res, next) {
     movie = req.params.movieTitle;
   console.log('In getMovieReviewsFromAPI');
   console.log(req.params.movieTitle);
-  console.log('req = ', req);
-  console.log('res = ', res);
+  // console.log('req = ', req);
+  // console.log('res = ', res);
   let movieQuery = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='${movie}'&api-key=${API_KEY}`;
   console.log(movieQuery);
   fetch(movieQuery)
