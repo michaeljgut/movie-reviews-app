@@ -21,7 +21,7 @@ usersController.create = (req, res) => {
 }
 
 usersController.index = (req, res) => {
-  User.findUserMovieComments(req.user.id, req.body.movieTitle)
+  User.findUserComments(req.user.id)
     .then(comments => {
         res.json({
         user: req.user,

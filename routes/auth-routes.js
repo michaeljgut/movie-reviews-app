@@ -14,9 +14,10 @@ authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
 authRouter.post('/register', usersController.create);
 
 authRouter.post('/login', passport.authenticate('local', {
-    successRedirect: '/comments/new',
+    successRedirect: '/movie-reviews',
     failureRedirect: '/auth/login',
-    failureFlash: true,
+    successFlash: 'Welcome!',
+    failureFlash: true
   })
 );
 
