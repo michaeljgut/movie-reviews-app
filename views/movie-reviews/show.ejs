@@ -3,7 +3,7 @@
 <h4>Movie Title: <%= movieReview.results[0].display_title %></h4>
 <p>Critics Pick: <%= movieReview.results[0].critics_pick %></p>
 <p>Summary: <%= movieReview.results[0].summary_short %></p>
-<p>Opening Date: <%= movieReview.results[0].opening_date %></p>
+<p>Opening Date (YYYY-MM-DD): <%= movieReview.results[0].opening_date %></p>
 <p>Rating: <%= movieReview.results[0].mpaa_rating %></p>
 <p>
   <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
@@ -12,7 +12,7 @@
 <h4>Comments</h4>
 
 <% comments.forEach((comment) => { %>
-<p><%= comment.username %> - <%= comment.date_entered %> - <%= comment.comment %></p>
+<p>By <%= comment.username %> - on <%= comment.date_entered %> - <%= comment.comment %></p>
 <% }) %>
 
 <p>

@@ -44,10 +44,11 @@ Comment.update = (comment, id) => {
 }
 
 Comment.destroy = id => {
-  return db.none(
+  return db.oneOrNone(
     `
       DELETE FROM comments
       WHERE id = $1
+      RETURNING *
     `,
     [id]
   );

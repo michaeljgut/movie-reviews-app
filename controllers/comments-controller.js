@@ -61,8 +61,8 @@ commentsController.update = (req, res) => {
 
 commentsController.destroy = (req, res) => {
   Comment.destroy(req.params.id)
-    .then(() => {
-      res.redirect('/comments')
+    .then(comment => {
+      res.redirect(`/movie-reviews/${comment.movie_title}`);
     })
     .catch(err => {
       res.status(400).json(err);
