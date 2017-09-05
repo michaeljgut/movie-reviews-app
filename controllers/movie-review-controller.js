@@ -1,3 +1,4 @@
+const movieReviews = require('../models/movie-reviews.js');
 const Comment = require('../models/comments.js');
 const movieReviewsController = {};
 
@@ -17,7 +18,8 @@ movieReviewsController.sendApiMovieReviews = (req, res) => {
       movie = req.params.movieTitle;
     Comment.findAllByMovieTitle(movie)
       .then(comments => {
-        console.log(comments);
+        console.log(res.locals.movieReviewData);
+        movieReviews.create(res.locals.movieReviewData);
         res.render('movie-reviews/show', {movieReview: res.locals.movieReviewData,
                                           comments: comments});
       }).catch(err => {
