@@ -1,3 +1,4 @@
+// Full CRUD functionality for comments
 const Comment = require('../models/comments');
 
 const commentsController = {};

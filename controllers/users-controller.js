@@ -1,3 +1,4 @@
+// Uses salt hash to encrypt password
 const bcrypt = require('bcryptjs');
 const User = require('../models/users.js');
 

@@ -1,3 +1,4 @@
+// Router to handle login, logout and registering new users.
 const express = require('express');
 const authRouter = express.Router();
 const passport = require('../services/auth/local');

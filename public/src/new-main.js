@@ -1,3 +1,6 @@
+/* Gets the movie title from local storage and puts it in the movie title field. Local storage was set in the /index
+ * view.
+ */
 let movieTitleInput = document.getElementById('movie_title');
 let commentInput = document.getElementById('comment');
 commentInput.focus();

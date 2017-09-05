@@ -1,3 +1,4 @@
+// Router for comments path. Requires that a user is logged in to create, edit, or delete comments.
 const express = require('express');
 const commentsController = require('../controllers/comments-controller');
 const commentsRouter = express.Router();

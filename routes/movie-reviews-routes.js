@@ -1,3 +1,4 @@
+// Router for movie-reviews path
 const express = require('express');
 const movieReviewsRouter = express.Router();
 
@@ -6,14 +7,9 @@ const movieReviewsHelper = require('../services/movie-reviews/movie-reviews-help
 
 movieReviewsRouter.get('/', movieReviewsHelper.getMovieReviewsFromAPI,
   movieReviewsController.sendApiMovieReviews);
-// movieReviewsRouter.get('/', movieReviewsController.index);
-// movieReviewsRouter.get('/show', movieReviewsHelper.getMovieReviewsFromAPI,
-//   movieReviewsController.sendApiMovieReviews);
 movieReviewsRouter.post('/show', movieReviewsHelper.getMovieReviewsFromAPI,
   movieReviewsController.sendApiMovieReviews);
 
-// movieReviewsRouter.post('/', movieReviewsHelper.getMovieReviewsFromAPI,
-// maybe you will need to use `req.params.movie-review` in your API call? 🤔
 movieReviewsRouter.get('/:movieTitle', movieReviewsHelper.getMovieReviewsFromAPI,
   movieReviewsController.sendApiMovieReviews);
 

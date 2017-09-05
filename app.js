@@ -1,3 +1,4 @@
+// Main file to set up express and middleware, to set up routes and to listen.
 const express = require('express');
 const path = require('path')
 const app = express();

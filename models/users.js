@@ -18,13 +18,6 @@ User.create = user => {
   `, [user.username, user.password_digest]);
 };
 
-User.findUserComments = id => {
-  return db.manyOrNone(`
-    SELECT * FROM comments
-    WHERE user_id = $1
-  `, [id]);
-};
-
 User.findUserComments = (id) => {
   return db.manyOrNone(`
     SELECT * FROM comments

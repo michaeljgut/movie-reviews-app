@@ -6,6 +6,7 @@ Comment.findAll = () => {
   return db.query('SELECT * FROM comments');
 }
 
+// Does an Inner Join between comments table and users table on user id to get username in movie reviews show view.
 Comment.findAllByMovieTitle = (movieTitle) => {
   return db.query(`SELECT comments.id AS id, comment, to_char(date_entered, 'YYYY-MM-DD') AS date_entered, username FROM comments
                    JOIN users
