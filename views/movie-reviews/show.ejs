@@ -9,7 +9,10 @@
 <p>Publication Date (YYYY-MM-DD): <%= movieReview.results[0].publication_date%></p>
 <p>Rating: <%= movieReview.results[0].mpaa_rating %></p>
 <p>
-  <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
+  <% if (movieReview.results[0].link.url) { %>
+    <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
+  <% } else %>
+    <a href="<%= movieReview.results[0].link_url %>">NY Times Movie Review</a>
 </p>
 
 <h4>Comments</h4>

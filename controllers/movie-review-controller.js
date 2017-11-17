@@ -18,22 +18,26 @@ movieReviewsController.sendApiMovieReviews = (req, res) => {
       movie = req.params.movieTitle;
     Comment.findAllByMovieTitle(movie)
       .then(comments => {
-        console.log(res.locals.movieReviewData);
-        movieReviews.create(res.locals.movieReviewData);
-        res.render('movie-reviews/show', {movieReview: res.locals.movieReviewData,
-                                          comments: comments});
+        movieReviews.findByMovieTitle(movie)
+        .then(movieReviewsData => {
+          console.log('movieReviews = ', movieReviewsData);
+          console.log(res.locals.movieReviewData);
+          if (!movieReviewsData) {
+            movieReviews.create(res.locals.movieReviewData);
+          }
+          res.render('movie-reviews/show', {movieReview: res.locals.movieReviewData,
+                                            comments: comments});
+        }).catch(err => {
+          console.log(err);
+          console.log('in sendApiMovieReviews');
+          res.status(500).json({err: err});
+        });
       }).catch(err => {
         console.log(err);
         console.log('in sendApiMovieReviews');
         res.status(500).json({err: err});
       });
   }
-  // , { movieReview: res.locals.movieReviewData });
-
-  // res.json({
-  //   message: `Movie Reviews for ${req.params.movieTitle}`,
-  //   message2: res.locals.movieReviewData
-  // })
 }
 
 module.exports = movieReviewsController;
