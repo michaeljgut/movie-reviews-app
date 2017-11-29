@@ -21,4 +21,11 @@ MovieReviews.create = (movieReviewData) => {
   );
 };
 
+MovieReviews.findByMovieTitle = (movieTitle) => {
+  return db.oneOrNone(`
+    SELECT * FROM movie_reviews
+    WHERE display_title = UPPER($1)
+  `, [movieTitle]);
+}
+
 module.exports = MovieReviews;
