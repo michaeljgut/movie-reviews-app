@@ -1,13 +1,15 @@
 <% include ./partials/boilerplate %>
 
-<h1>NY Times Movie Reviews</h1>
+<h1>The New York Times' Movie Reviews Application</h1>
 
 <form id='request' action="/movie-reviews/show" method="POST">
-  <input id='movie' type='text' name='movieTitle' placeholder='Movie Title' />
-  <input id='submit' type='submit' value='Get the movie review!' />
+  <h2>
+    <input id='movie' type='text' name='movieTitle' placeholder='Movie Title' />
+    <input id='submit' type='submit' value='Submit' />
+  </h2>
 </form>
 
-<p><%= movieReviewMessage %></p>
+<h3><%= movieReviewMessage %></h3>
 
 <p><a href="/auth/login">Login</a> <a href="/auth/logout">Logout</a>
 

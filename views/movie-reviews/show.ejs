@@ -2,11 +2,12 @@
 
 <p>
   <a href="/">Home</a>
-<h4>Movie Title: <%= movieReview.results[0].display_title %></h4>
+</p>
+<h4><%= movieReview.results[0].display_title %></h4>
 <p>Critics Pick: <%= movieReview.results[0].critics_pick %></p>
 <p>Summary: <%= movieReview.results[0].summary_short %></p>
-<p>Opening Date (YYYY-MM-DD): <%= movieReview.results[0].opening_date %></p>
-<p>Publication Date (YYYY-MM-DD): <%= movieReview.results[0].publication_date%></p>
+<p>Opening Date: <%= movieReview.results[0].opening_date %></p>
+<p>Publication Date: <%= movieReview.results[0].publication_date%></p>
 <p>Rating: <%= movieReview.results[0].mpaa_rating %></p>
 <p>
   <% if ("link" in movieReview.results[0]) { %>
@@ -24,7 +25,6 @@
 <% }) %>
 
 <p>
-  <a href="/">Look up another movie</a>
   <a href="../comments/new">Add a comment</a>
 </p>
 
