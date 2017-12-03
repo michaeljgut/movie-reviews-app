@@ -7,5 +7,10 @@ function saveMovieTitle() {
 
 let movieTitleInput = document.getElementById('movie');
 movieTitleInput.focus();
+if (localStorage.getItem('saveMessage') === 'false') {
+  localStorage.setItem('saveMessage', 'true');
+  let movieReviewMessage = document.getElementsByClassName('movie-review-message');
+  movieReviewMessage[0].innerText = "Please enter movie title";
+}
 let submitButton = document.getElementById('submit');
 submitButton.addEventListener('click',saveMovieTitle);

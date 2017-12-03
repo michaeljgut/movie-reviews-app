@@ -9,7 +9,7 @@ movieReviewsController.index = (req, res) => {
 movieReviewsController.sendApiMovieReviews = (req, res) => {
   console.log('in sendApiMovieReviews',res.locals.movieReviewData);
   if (res.locals.movieReviewData.num_results < 1)
-    res.render('index',{movieReviewMessage: 'Movie not found'})
+    res.render('index',{movieReviewMessage: 'Movie not found, please enter another movie title.'})
   else {
     let movie = '';
     if (req.body.movieTitle)

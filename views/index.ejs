@@ -1,7 +1,9 @@
 <% include ./partials/boilerplate %>
 
 <h1>The New York Times' Movie Reviews Application</h1>
-
+<div class="nytimes-symbol">
+  <img src="../images/poweredby_nytimes_150a.png" />
+</div>
 <form id='request' action="/movie-reviews/show" method="POST">
   <h2>
     <input id='movie' type='text' name='movieTitle' placeholder='Movie Title' />
@@ -9,9 +11,7 @@
   </h2>
 </form>
 
-<h3><%= movieReviewMessage %></h3>
-
-<p><a href="/auth/login">Login</a> <a href="/auth/logout">Logout</a>
+<h2 class="movie-review-message"><%= movieReviewMessage %></h2>
 
 <script src="/src/main.js"></script>
 
