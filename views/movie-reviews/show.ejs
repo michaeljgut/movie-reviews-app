@@ -1,14 +1,11 @@
 <% include ../partials/boilerplate %>
 
-<p>
-  <a href="/">Home</a>
-</p>
-<h4><%= movieReview.results[0].display_title %></h4>
-<p>Critics Pick: <%= movieReview.results[0].critics_pick %></p>
-<p>Summary: <%= movieReview.results[0].summary_short %></p>
-<p>Opening Date: <%= movieReview.results[0].opening_date %></p>
-<p>Publication Date: <%= movieReview.results[0].publication_date%></p>
-<p>Rating: <%= movieReview.results[0].mpaa_rating %></p>
+<h1><%= movieReview.results[0].display_title %></h1>
+<h2 class="critics-pick">Critics Pick: <%= movieReview.results[0].critics_pick %></h2>
+<p><label>Summary:</label> <%= movieReview.results[0].summary_short %></p>
+<p><label>Opening Date:</label> <%= movieReview.results[0].opening_date %></p>
+<p><label>Publication Date:</label> <%= movieReview.results[0].publication_date%></p>
+<p><label>Rating:</label> <%= movieReview.results[0].mpaa_rating %></p>
 <p>
   <% if ("link" in movieReview.results[0]) { %>
     <a href="<%= movieReview.results[0].link.url %>">NY Times Movie Review</a>
@@ -17,7 +14,7 @@
   <% } %>
 </p>
 
-<h4>Comments</h4>
+<h3>Comments</h3>
 
 <% comments.forEach((comment) => { %>
 <p><a href="../comments/<%= comment.id %>/edit">By <%= comment.username %> - on <%= comment.date_entered %> -
@@ -27,5 +24,7 @@
 <p>
   <a href="../comments/new">Add a comment</a>
 </p>
+
+<script src="/src/show-main.js"></script>
 
 <% include ../partials/end %>

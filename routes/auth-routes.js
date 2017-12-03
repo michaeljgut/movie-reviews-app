@@ -10,7 +10,7 @@ const usersController = require('../controllers/users-controller');
 authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/login',{
      title  : 'Login',
-     errors : req.flash('error')
+     errors : ''
    });
 });
 
@@ -22,8 +22,7 @@ authRouter.post('/register', usersController.create);
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/movie-reviews',
     failureRedirect: '/auth/login',
-    successFlash: 'Welcome!',
-    failureFlash: true
+    failureFlash: true,
   })
 );
 
