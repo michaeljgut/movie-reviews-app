@@ -1,10 +1,41 @@
 body {
-  margin: 0 1%;
+  margin: 1%;
   padding: 0;
   font-family: sans-serif;
+  background-color: beige;
 }
 
-h1, h2, h3 {
+h1 {
+  margin-top: -7%;
+}
+
+nav {
+  font-size: 125%;
+}
+
+label {
+  font-weight: 700;
+}
+
+.auth-form {
+  text-align: center;
+  font-size: 150%;
+  font-weight: 700;
+}
+
+.button {
+  font-size: 200%;
+}
+
+.error {
+  font-weight: 700;
+}
+
+.error,
+.critics-pick,
+.nytimes-symbol,
+h1,
+h2 {
   text-align: center;
 }
 

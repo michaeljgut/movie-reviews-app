@@ -1,17 +1,20 @@
 <% include ../partials/boilerplate %>
 
-<div>
-  <form method='POST' action='/auth/login'>
-    <input name='username' type='text' placeholder='username' required />
-    <input name='password' type='password' placeholder='password' required />
-    <input type='submit' value='Log in!' />
-  </form>
-</div>
+<h1>Login</h1>
+<form class="auth-form" method='POST' action='/auth/login'>
+  <label>Username:</label>
+  <input name='username' type='text' placeholder='username' required />
+  </br>
+  <label>Password:</label>
+  <input name='password' type='password' placeholder='password' required />
+  </br>
+  <input class="button" type='submit' value='Log in!' />
+</form>
 
 <% if (errors) { %>
   <p class="error"><%= errors %></p>
 <% } %>
 
-<a href="/auth/register">Register</a>
+<script src="/src/login-main.js"></script>
 
 <% include ../partials/end %>
