@@ -1,6 +1,6 @@
 // Main file to set up express and middleware, to set up routes and to listen.
 const express = require('express');
-const path = require('path')
+const path = require('path');
 const app = express();
 require('dotenv').config();
 const methodOverride = require('method-override');
@@ -38,7 +38,7 @@ app.use(express.static('public'));
 // Set up Routes
 
 const commentsRouter = require('./routes/comment-routes');
-app.use('/comments', commentsRouter)
+app.use('/comments', commentsRouter);
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);

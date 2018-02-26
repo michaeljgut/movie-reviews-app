@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     jshint: {
       ignore_warning: {
         options: {
+          'esversion': 6,
           '-W015': true,
         },
         src: ['app.js'],
@@ -11,4 +12,5 @@ module.exports = function(grunt) {
     },
   });
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.registerTask('default', ['jshint']);
 };
